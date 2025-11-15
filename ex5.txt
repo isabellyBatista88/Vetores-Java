@@ -1,0 +1,44 @@
+package ExerciciosVetores;
+import java.util.Scanner;
+
+public class Ex5{
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int[] a = new int[10];
+
+        // usuário digita os valores
+        for (int i = 0; i < a.length; i++) {
+            System.out.print("Digite o " + (i+1) + "º valor do vetor A: ");
+            a[i] = entrada.nextInt();
+        }
+
+        System.out.println("\n--- RESULTADOS ---\n");
+
+        for (int i = 0; i < a.length; i++) {
+
+            int elementoAtu = a[i];
+
+            System.out.println("Elemento A[" + i + "] = " + elementoAtu + ".");
+            System.out.print("Divisores de " + elementoAtu + ": ");
+
+            // caso especial do zero
+            if (elementoAtu == 0) {
+                System.out.print("Todos os números (0 é divisível por qualquer número)");
+            } else {
+                // busca dos divisores
+                for (int d = 1; d <= elementoAtu; d++) {
+                    if (elementoAtu % d == 0) {
+                        System.out.print(d + " ");
+                    }
+                }
+            }
+
+            System.out.println("\n");
+        }
+
+        entrada.close();
+    }
+}
